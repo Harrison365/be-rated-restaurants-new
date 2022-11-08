@@ -1,21 +1,22 @@
 # Rated Restaurants
 
-npm i jest -D
-npm i supertest -D //an extenstion to jest
-npm i dotenv
-npm i pg
-npm i express
-npm i nodemon -D ???more for insomnia
+- npm i jest -D (lets us write tests)
+- npm i supertest -D (an extenstion to jest that lets us make requests to server during test)
+- npm i dotenv (allows us to swutch between dbs if we are testing or not)
+- npm i pg (allows us to access PSQL using JS)
+- npm i express (allow us to make a server)
+- npm i nodemon -D (to keep server running for insomnia requests, not needed so much if using tests)
 
-set seed-test and seed-dev scripts
-set test script to seed-test && jest
+* set seed-test and seed-dev scripts
+* set test script to seed-test && jest
 
-set up env files
-set up index.js in db folder. === setting up Pool with pg
-make test file
-make ap.js
-make controllers
-make models
+* set up env files
+* set up index.js in db folder. === setting up Pool with pg
+* make test file
+* make listen.js (optional)
+* make app.js (with error handlers)
+* make controllers
+* make models
 
 ## A micro [yelp](https://www.yelp.co.uk/c/manchester/restaurants) clone API using Express and SQL
 

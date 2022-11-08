@@ -12,7 +12,7 @@ describe("GET /api", () => {
       .get("/api")
       .expect(200)
       .then((res) => {
-        expect(res.body).toEqual({ message: "all ok" });
+        expect(res.body).toEqual({ message: "all ok!" });
       });
   });
 });
