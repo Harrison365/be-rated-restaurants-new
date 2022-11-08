@@ -1,6 +1,21 @@
-test test
-
 # Rated Restaurants
+
+npm i jest -D
+npm i supertest -D //an extenstion to jest
+npm i dotenv
+npm i pg
+npm i express
+npm i nodemon -D ???more for insomnia
+
+set seed-test and seed-dev scripts
+set test script to seed-test && jest
+
+set up env files
+set up index.js in db folder. === setting up Pool with pg
+make test file
+make ap.js
+make controllers
+make models
 
 ## A micro [yelp](https://www.yelp.co.uk/c/manchester/restaurants) clone API using Express and SQL
 
