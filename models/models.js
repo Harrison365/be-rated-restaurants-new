@@ -22,6 +22,6 @@ exports.removeRestaurant = (id) => {
   return db
     .query("DELETE FROM restaurants WHERE restaurant_id = $1", [id])
     .then(() => {
-      return "bubba gump hannah deleted the restaurant";
+      return {};
     });
 };
