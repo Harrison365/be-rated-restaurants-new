@@ -7,6 +7,9 @@ exports.fetchRestaurants = () => {
 };
 
 exports.sendRestaurant = (restaurant) => {
+    if (Object.keys(restaurant).length !== 4 && !Object.keys(restaurant).includes("restaurant_name", "area_id", "cuisine", "website")){ console.log("hello")
+return Prommise.reject({status: 400, message: "Invalid input entered - please try again!" })
+    }
   const { restaurant_name, area_id, cuisine, website } = restaurant;
   return db
     .query(

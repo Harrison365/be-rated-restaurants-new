@@ -15,6 +15,14 @@ describe("GET /api", () => {
         expect(res.body).toEqual({ message: "all ok!" });
       });
   });
+  test("If invalid path given - throws 400 error message", () => {
+    return request(app)
+    .get("/appi")
+    .expect(400)
+    .then((res) => {
+      expect(res.body).toEqual({message: "Invalid path"})
+    })
+  })
 });
 describe("GET /api/restaurants", () => {
   test("get 200 response with an array of restaurants", () => {
@@ -37,7 +45,16 @@ describe("GET /api/restaurants", () => {
         });
       });
   });
+  test("If invalid path given - throws 400 error message", () => {
+    return request(app)
+    .get("/api/ressuranteee")
+    .expect(400)
+    .then((res) => {
+      expect(res.body).toEqual({message: "Invalid path"})
+    })
+  })
 });
+
 describe("POST /api/restaurants", () => {
   test("Status 201, responds with newly added restaurant object", () => {
     const newRestaurant = {
@@ -57,6 +74,31 @@ describe("POST /api/restaurants", () => {
           area_id: 2,
           cuisine: "British",
           website: "www.thecodfather.com",
+        });
+      });
+  });
+  test("If invalid path given - throws 400 error message", () => {
+    return request(app)
+    .get("/api/restaurrranntteeeee")
+    .expect(400)
+    .then((res) => {
+      expect(res.body).toEqual({message: "Invalid path"})
+    })
+  })
+  test("Error message and status 400, when given an incorrect req body", () => {
+    const newRestaurant = {
+      restaurant_name: "The Codfather",
+      area_id: 2,
+      worst_dish: "modly fish cakes",
+      website: "www.thecodfather.com",
+    };
+    return request(app)
+      .post("/api/restaurants")
+      .send(newRestaurant)
+      .expect(400)
+      .then((response) => {
+        expect(response.body).toEqual({
+         message: 'Invalid input entered - please try again!'
         });
       });
   });
@@ -81,3 +123,4 @@ describe("DELETE /api/restaurants/:restaurant_id", () => {
       });
   });
 });
+

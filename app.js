@@ -14,8 +14,12 @@ app.post("/api/restaurants", postRestaurant);
 app.delete("/api/restaurants/:restaurant_id", deleteRestaurant);
 
 app.all("/*", (req, res) => {
-  res.status(404).send({ msg: "Route not found" });
+  res.status(400).send({ message: "Invalid path" });
 });
+
+app.use((err, req,res, next) => {
+    console.log(err)
+})
 
 app.use((err, req, res, next) => {
   console.log(err);
